@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
   reviewer: { type: String, required: true },
-  grade: {type: Number, required: true},
-  rating: { type: Number, required: true }, // Rating should be a number
+  grade: { type: Number, required: true, min: 0, max: 100 },
+  rating: { type: Number, required: true }, 
   comment: { type: String, required: true },
-  date: { type: Date, default: Date.now } // Store date as Date type
+  date: { type: Date, default: Date.now }
 });
 
 const bookSchema = new mongoose.Schema({
@@ -14,7 +14,7 @@ const bookSchema = new mongoose.Schema({
   genre: { type: String, required: true },
   summary: { type: String, required: true },
   publishedDate: { type: Date, required: true },
-  reviews: [reviewSchema] // Array of reviews
+  reviews: [reviewSchema]
 });
 
 const Book = mongoose.model('Book', bookSchema);
