@@ -2,8 +2,8 @@ const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
   reviewer: { type: String, required: true },
-  rating: { type: Number, required: true }, // Rating should be a number
   grade: {type: Number, required: true},
+  rating: { type: Number, required: true }, // Rating should be a number
   comment: { type: String, required: true },
   date: { type: Date, default: Date.now } // Store date as Date type
 });
