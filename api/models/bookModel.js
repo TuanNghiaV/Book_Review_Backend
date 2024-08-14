@@ -2,7 +2,6 @@ const mongoose = require('mongoose');
 
 const reviewSchema = new mongoose.Schema({
   reviewer: { type: String, required: true },
-  grade: { type: Number, required: true, min: 0, max: 100 },
   rating: { type: Number, required: true }, 
   comment: { type: String, required: true },
   date: { type: Date, default: Date.now }
